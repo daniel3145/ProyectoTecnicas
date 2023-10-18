@@ -12,7 +12,7 @@
 
 ## Casos de pruebas
 
-* Utilizando la clase AcademicRecordImplTest
+* Utilizando la clase FactoryRecordImplTest
 
 ## Ejecución
 
