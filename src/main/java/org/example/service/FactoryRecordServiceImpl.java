@@ -69,7 +69,7 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
         logger.error("Average Money");
         return average;
     }
-
+    @Override
     public String mostEfficientName() {
         String name = null;
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
@@ -101,22 +101,22 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
             numEmployee[i] = factoryList.get(i).Nemployee();
           }
 
-    // Ordenar el arreglo en orden ascendente
+
         Arrays.sort(numEmployee);
 
-    // Calcular la mediana
+
     float median;
         if(numEmployee.length %2==0)
 
     {
-        // Si hay un número par de elementos, tomar el promedio de los dos valores centrales
+
         int medium1 = numEmployee[numEmployee.length / 2 - 1];
         int medium2 = numEmployee[numEmployee.length / 2];
         median = (medium1 + medium2) / 2;
     } else
 
     {
-        // Si hay un número impar de elementos, tomar el valor central
+
         median = numEmployee[numEmployee.length / 2];
     }
 
