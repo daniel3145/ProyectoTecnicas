@@ -1,6 +1,8 @@
 package org.example.service;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.List;
 import org.example.model.Factory;
 import org.example.repository.FactoryRepository;
@@ -12,83 +14,114 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
     private static final Logger logger = LoggerFactory.getLogger(FactoryRecordServiceImpl.class);
     private final FactoryRepository factoryRepository;
 
-    public FactoryRecordServiceImpl(FactoryRepository factoryRepository){
+    public FactoryRecordServiceImpl(FactoryRepository factoryRepository) {
         this.factoryRepository = factoryRepository;
     }
 
     @Override
-    public Integer calcularCantidadPersonas(){
-        int cantidad=0;
+    public Integer calculateNumberPeople() {
+        int quantity = 0;
 
-    List<Factory> factoryList = this.factoryRepository.findAllFactory();
+        List<Factory> factoryList = this.factoryRepository.findAllFactory();
         for (Factory factory : factoryList) {
-            cantidad = cantidad + factory.NOperarios();
+            quantity = quantity + factory.Nemployee();
         }
-            System.out.println("Sumando el número de empleados");
-            logger.info("Sumando el número de empleados");
-            logger.warn("Sumando el número de empleados");
-            logger.error("Sumando el número de empleados");
-        return cantidad;
+        System.out.println("Adding up number of Employees of all factories");
+        logger.info("Adding employees ");
+        logger.warn("Adding employees");
+        logger.error("Adding employees");
+        return quantity;
     }
 
-    public String NombreMasEmpleados()
-    {
-        String Nombre=null;
-        int nempleados=0;
+    public String factoryNameEmployees() {
+        String name = null;
+        int nemployee = 0;
 
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
 
         for (Factory factory : factoryList) {
-            if (factory.NOperarios() > nempleados) {
-                nempleados = factory.NOperarios();
-                Nombre = factory.NombreFabrica();
+            if (factory.Nemployee() > nemployee) {
+                nemployee = factory.Nemployee();
+                name = factory.Name();
             }
         }
 
-        System.out.println("Buscando el nombre de la fabrica mas empleados");
-        logger.info("Buscando Numero de Empleados");
-        logger.warn("Buscando Numero de Empleados");
-        logger.error("Buscando Numero de Empleados");
+        System.out.println("Looking for the name of the factory with the most employees");
+        logger.info("Looking name factory");
+        logger.warn("Looking name factory");
+        logger.error("Looking name factory");
 
-        return Nombre;
+        return name;
     }
 
     @Override
-    public BigDecimal PromedioDinero() {
-        float Acumulador=0;
-        List<Factory> factoryList=this.factoryRepository.findAllFactory();
-            for(Factory factory: factoryList){
-                float valor = factory.ValorUnidad() * factory.Nunidades();
-                Acumulador += valor;
-            }
-        BigDecimal promedio = BigDecimal.valueOf(Acumulador / factoryList.size());
-        System.out.println("Promedio de dimero ganado");
-        logger.info("Promedio de dinero");
-        logger.warn("Promedio de dinero");
-        logger.error("Promedio de dinero");
-        return promedio;
+    public BigDecimal averageMoney() {
+        float accumulator = 0;
+        List<Factory> factoryList = this.factoryRepository.findAllFactory();
+        for (Factory factory : factoryList) {
+            float value = factory.UnitValue() * factory.Nunit();
+            accumulator += value;
+        }
+        BigDecimal average = BigDecimal.valueOf(accumulator / factoryList.size());
+        System.out.println("Average money earned among all factories");
+        logger.info("Average Money");
+        logger.warn("Average Money");
+        logger.error("Average Money");
+        return average;
     }
 
-    public String FabricaMasEficiente()
-    {
-        String nombre=null;
-        List<Factory> factoryList=this.factoryRepository.findAllFactory();
-        double minTiempoPorUnidad = Double.MAX_VALUE;
-        String fabricaMinTiempo = "";
+    public String mostEfficientName() {
+        String name = null;
+        List<Factory> factoryList = this.factoryRepository.findAllFactory();
+        double minTime = Double.MAX_VALUE;
 
 
         for (Factory fabrica : factoryList) {
-            double diasproduccion=(fabrica.TiempoCreacionTotalU()* fabrica.Nunidades())/fabrica.HorasTrabajadas();
-            double tiempoPorUnidad = diasproduccion / fabrica.Nunidades();
-            if (tiempoPorUnidad < minTiempoPorUnidad) {
-                minTiempoPorUnidad = tiempoPorUnidad;
-                nombre = fabrica.NombreFabrica();
+            double diasproduccion = (fabrica.CreationTimeU() * fabrica.Nunit()) / fabrica.HoursWorked();
+            double tiempoPorUnidad = diasproduccion / fabrica.Nunit();
+            if (tiempoPorUnidad < minTime) {
+                minTime = tiempoPorUnidad;
+                name = fabrica.Name();
             }
         }
-        System.out.println("Buscando fabrica mas eficiente");
-        logger.info("Buscando mas eficiente");
-        logger.warn("Buscando mas eficiente");
-        logger.error("Buscando mas eficiente");
-        return nombre;
+        System.out.println("Looking for the name of the most efficient factory");
+        logger.info("Looking most efficient");
+        logger.warn("Looking most efficient");
+        logger.error("Looking most efficient");
+        return name;
     }
+
+    @Override
+    public Float medianNumberEmployees() {
+
+        List<Factory> factoryList = this.factoryRepository.findAllFactory();
+        int[] numEmployee = new int[factoryList.size()];
+        for(int i = 0; i<factoryList.size();i++)
+          {
+            numEmployee[i] = factoryList.get(i).Nemployee();
+          }
+
+    // Ordenar el arreglo en orden ascendente
+        Arrays.sort(numEmployee);
+
+    // Calcular la mediana
+    float median;
+        if(numEmployee.length %2==0)
+
+    {
+        // Si hay un número par de elementos, tomar el promedio de los dos valores centrales
+        int medium1 = numEmployee[numEmployee.length / 2 - 1];
+        int medium2 = numEmployee[numEmployee.length / 2];
+        median = (medium1 + medium2) / 2;
+    } else
+
+    {
+        // Si hay un número impar de elementos, tomar el valor central
+        median = numEmployee[numEmployee.length / 2];
+    }
+
+        return median;
+}
+
+
 }

@@ -12,17 +12,20 @@ public class ApplicationRunner{
 
         System.out.println(
                 MessageFormat.format(
-                        "Cantidad de Personas :{0}", factoryRecordService.calcularCantidadPersonas()));
+                        "Number of Employees in the factories :{0}", factoryRecordService.calculateNumberPeople()));
         System.out.println(
                 MessageFormat.format(
-                        "La fabrica con mayor numero de empleados es :{0}", factoryRecordService.NombreMasEmpleados()));
+                        "Factory with the highest number of employees :{0}", factoryRecordService.factoryNameEmployees()));
         System.out.println(
                 MessageFormat.format(
-                        "El Promedio de Dinero de fabricas es es :{0}$", factoryRecordService.PromedioDinero()));
+                        "Average amount of money :{0}$", factoryRecordService.averageMoney()));
         System.out.println(
                 MessageFormat.format(
-                        "La fabrica mas eficiente :{0}", factoryRecordService.FabricaMasEficiente()));
+                        "Most efficient factory :{0}", factoryRecordService.mostEfficientName()));
 
+        System.out.println(
+                MessageFormat.format(
+                        "Median number of employees of factories :{0}", factoryRecordService.medianNumberEmployees()));
 
     }
 

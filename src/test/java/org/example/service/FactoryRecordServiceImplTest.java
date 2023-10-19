@@ -17,7 +17,7 @@ class FactoryRecordServiceImplTest {
 
     @Test
     void Calcular_cantidad_de_personas(){
-        Integer cantidad = this.factoryRecordService.calcularCantidadPersonas();
+        Integer cantidad = this.factoryRecordService.calculateNumberPeople();
 
         assertNotNull(cantidad);
         assertEquals(795,cantidad);
@@ -25,7 +25,7 @@ class FactoryRecordServiceImplTest {
     }
     @Test
     void Buscando_nombre_fabrica_mas_empleados(){
-        String nombre=this.factoryRecordService.NombreMasEmpleados();
+        String nombre=this.factoryRecordService.factoryNameEmployees();
         assertNotNull(nombre);
         assertEquals("Montero",nombre);
 
