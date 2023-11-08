@@ -1,7 +1,8 @@
 package org.example.service;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
+
+import org.example.exception.FactoryNotFoundException;
 import java.util.Arrays;
 import java.util.List;
 import org.example.model.Factory;
@@ -21,22 +22,20 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
     @Override
     public Integer calculateNumberPeople() {
         int quantity = 0;
-
+        logger.info("Calculando el promedio de calificacioens");
+       // List<Factory> factoryList = this.factoryRepository.findAllFactory();
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
         for (Factory factory : factoryList) {
             quantity = quantity + factory.Nemployee();
         }
-        System.out.println("Adding up number of Employees of all factories");
-        logger.info("Adding employees ");
-        logger.warn("Adding employees");
-        logger.error("Adding employees");
+
         return quantity;
     }
 
     public String factoryNameEmployees() {
         String name = null;
         int nemployee = 0;
-
+        logger.info("Mostrando el nombre de la fabrica con mas empleados");
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
 
         for (Factory factory : factoryList) {
@@ -45,33 +44,27 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
                 name = factory.Name();
             }
         }
-
-        System.out.println("Looking for the name of the factory with the most employees");
-        logger.info("Looking name factory");
-        logger.warn("Looking name factory");
-        logger.error("Looking name factory");
-
         return name;
     }
 
     @Override
     public BigDecimal averageMoney() {
         float accumulator = 0;
+        logger.info("Calculando el promedio de dinero de todas las fabricas");
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
         for (Factory factory : factoryList) {
             float value = factory.UnitValue() * factory.Nunit();
             accumulator += value;
         }
         BigDecimal average = BigDecimal.valueOf(accumulator / factoryList.size());
-        System.out.println("Average money earned among all factories");
-        logger.info("Average Money");
-        logger.warn("Average Money");
-        logger.error("Average Money");
+
         return average;
     }
+
     @Override
     public String mostEfficientName() {
         String name = null;
+        logger.info("Buscando la fabrica mas eficiente");
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
         double minTime = Double.MAX_VALUE;
 
@@ -84,16 +77,12 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
                 name = fabrica.Name();
             }
         }
-        System.out.println("Looking for the name of the most efficient factory");
-        logger.info("Looking most efficient");
-        logger.warn("Looking most efficient");
-        logger.error("Looking most efficient");
         return name;
     }
 
     @Override
     public Float medianNumberEmployees() {
-
+        logger.info("Media de Empleados de las fabricas");
         List<Factory> factoryList = this.factoryRepository.findAllFactory();
         int[] numEmployee = new int[factoryList.size()];
         for(int i = 0; i<factoryList.size();i++)
@@ -122,6 +111,5 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
 
         return median;
 }
-
 
 }

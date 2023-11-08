@@ -1,5 +1,8 @@
 package org.example.service;
 
+
+
+
 import java.math.BigDecimal;
 
 public interface FactoryRecordService {
@@ -8,6 +11,7 @@ public interface FactoryRecordService {
     BigDecimal averageMoney();
     String mostEfficientName();
     Float medianNumberEmployees();
+
 
 
 }
