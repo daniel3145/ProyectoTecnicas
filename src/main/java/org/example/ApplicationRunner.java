@@ -12,7 +12,7 @@ public class ApplicationRunner{
 
         System.out.println(
                 MessageFormat.format(
-                        "Number of Employees in the factories :{0}", factoryRecordService.calculateNumberPeople()));
+                        "Number of Employees in the factorie :{0}", factoryRecordService.calculateNumberPeople()));
         System.out.println(
                 MessageFormat.format(
                         "Factory with the highest number of employees :{0}", factoryRecordService.factoryNameEmployees()));
