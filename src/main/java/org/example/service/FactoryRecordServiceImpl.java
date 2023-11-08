@@ -2,7 +2,6 @@ package org.example.service;
 
 import java.math.BigDecimal;
 
-import org.example.exception.FactoryNotFoundException;
 import java.util.Arrays;
 import java.util.List;
 import org.example.model.Factory;

@@ -5,5 +5,5 @@ import org.example.model.Factory;
 public interface FactoryRepository {
     List<Factory> findAllFactory();
 
-    Factory addFactory(Factory newFactory);
+
 }
