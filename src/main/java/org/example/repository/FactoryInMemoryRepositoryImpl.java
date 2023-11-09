@@ -74,13 +74,6 @@ public class FactoryInMemoryRepositoryImpl implements FactoryRepository {
         return factoryList;
     }
 
-    @Override
-    public Factory addFactory (Factory newFactory)
-    {
-        this.factoryList.add(newFactory);
-        return this.factoryList.stream().filter(isTheName(newFactory)).findAny().orElse(null);
-
-    }
 
     private Predicate<Factory> isTheName(Factory newFactory)
     {
