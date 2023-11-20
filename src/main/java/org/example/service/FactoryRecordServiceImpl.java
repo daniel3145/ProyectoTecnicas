@@ -2,21 +2,27 @@ package org.example.service;
 
 import java.math.BigDecimal;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
 import org.example.model.Factory;
 import org.example.repository.FactoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FactoryRecordServiceImpl implements FactoryRecordService {
 
     private static final Logger logger = LoggerFactory.getLogger(FactoryRecordServiceImpl.class);
     private final FactoryRepository factoryRepository;
 
+
     public FactoryRecordServiceImpl(FactoryRepository factoryRepository) {
         this.factoryRepository = factoryRepository;
     }
+
+
+
 
     @Override
     public Integer calculateNumberPeople() {
@@ -110,5 +116,18 @@ public class FactoryRecordServiceImpl implements FactoryRecordService {
 
         return median;
 }
+
+
+    @Override
+    public List<Factory> listAllFactory() {
+        logger.info("Showing all Factory");
+        return this.factoryRepository.findAllFactory();
+    }
+
+    @Override
+    public Factory addFactory(Factory newFactory) {
+        logger.info("Adding a new Factory");
+        return this.factoryRepository.addFactory(newFactory);
+    }
 
 }

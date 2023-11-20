@@ -1,20 +1,20 @@
-KevinJeans,15,12,indigo,10,1,pantalones,500,12000
-Y&K,80,14,crudo,80,2,pantalones,5000,30000
-Montero,85,8,liviana,50,2,camisas,1200,50000
-Scuare,50,12,indigo,60,3,chaquetas,1500,10000
-ConfeccionesS.A,20,8,indigo,15,2,chores,1200,20000
-L&N,78,10,indigo,60,2,pantalones,12000,8000
-confesiones cochabamba,35,11,indigo,2,8,pantalones,5000,10000
-Gamin,60,10,indigo,60,3,pantalones,5000,50000
-Cosmos,45,12,indigo,30,4,pantalones,6000,15000
-El gato,65,12,crudo,70,3,pantalones,11000,20000
-Chevignon,30,12,indigo,32,4,chaquetas,8000,50000
-Lexus,8,7,algodon,5,3,camisas,500,25000
-Creaciones,28,14,indigo,12,4,pantalones,400,8000
-Muñetones,22,13,indigo,18,2,pantalones,10000,12000
-Confeciones,45,15,indigo,40,3,pantalones,1600,28000
-JeansB,34,15,indigo,30,3,pantalones,500,28000
-CDF,36,15,indigo,36,3,pantalones,1000,28000
-Prointex,24,15,indigo,24,3,pantalones,1300,28000
-Osmy Jeans,20,15,indigo,20,3,pantalones,1500,28000
-Confeccionees Berlin,15,15,indigo,12,3,pantalones,1100,28000
+KevinJeans,15,12,indigo,10,1,PANTALONES,500,12000
+Y&K,80,14,crudo,80,2,PANTALONES,5000,30000
+Montero,85,8,liviana,50,2,CAMISAS,1200,50000
+Scuare,50,12,indigo,60,3,CHAQUETAS,1500,10000
+ConfeccionesS.A,20,8,indigo,15,2,CHORES,1200,20000
+L&N,78,10,indigo,60,2,PANTALONES,12000,8000
+Confesiones Cochabamba,35,11,indigo,2,8,PANTALONES,5000,10000
+Gamin,60,10,indigo,60,3,PANTALONES,5000,50000
+Cosmos,45,12,indigo,30,4,PANTALONES,6000,15000
+Elgato,65,12,crudo,70,3,PANTALONES,11000,20000
+Chevignon,30,12,indigo,32,4,CHAQUETAS,8000,50000
+Lexus,8,7,algodon,5,3,CAMISAS,500,25000
+Creaciones,28,14,indigo,12,4,PANTALONES,400,8000
+Muñetones,22,13,indigo,18,2,PANTALONES,10000,12000
+Confeciones,45,15,indigo,40,3,PANTALONES,1600,28000
+JeansB,34,15,indigo,30,3,PANTALONES,500,28000
+CDF,36,15,indigo,36,3,PANTALONES,1000,28000
+Prointex,24,15,indigo,24,3,PANTALONES,1300,28000
+Osmy Jeans,20,15,indigo,20,3,PANTALONES,1500,28000
+dANIEL,15,15,indigo,12,3,PANTALONES,1100,28000
